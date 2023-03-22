@@ -34,4 +34,14 @@ const pointer = makePizza;
 Вызов makeMessage("Royal Grand", makePizza) возвращает строку "Pizza Royal Grand is being prepared, please wait..."
 Вызов makeMessage("Ultracheese", deliverPizza) возвращает строку "Delivering Ultracheese pizza."  */
 
-/*    */
+/*  function deliverPizza(pizzaName) {
+return 'Delivering ${pizzaName} pizza.';
+}
+
+function makePizza(pizzaName) {
+return 'Pizza ${pizzaName} is being prepared, please wait...';
+}
+
+function makeMessage(pizzaName, callback) {
+return callback(pizzaName);
+}  */
