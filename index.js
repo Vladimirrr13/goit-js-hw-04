@@ -11,6 +11,27 @@
 
 /* 
 
+function makePizza() {
+  return "Your pizza is being prepared, please wait.";
+}
+// Change code below this line
 
+const result = makePizza();
+const pointer = makePizza;
 
 */
+
+
+
+/* --------------------------------- TASK 2 --------------------------------- */
+
+/*  Дополни функцию makeMessage так, чтобы она ожидала вторым параметром (параметр callback) колбэк-функцию и возвращала ее вызов. Функция deliverPizza или makePizza будет передаваться как колбэк и ожидать аргументом имя готовой доставляемой пиццы.
+
+Объявлена функция deliverPizza
+Объявлена функция makePizza
+Объявлена функция makeMessage
+Функция makeMessage принимает два параметра, названые согласно задания, pizzaName и callback
+Вызов makeMessage("Royal Grand", makePizza) возвращает строку "Pizza Royal Grand is being prepared, please wait..."
+Вызов makeMessage("Ultracheese", deliverPizza) возвращает строку "Delivering Ultracheese pizza."  */
+
+/*    */
