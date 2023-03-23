@@ -35,13 +35,18 @@ const pointer = makePizza;
 Вызов makeMessage("Ultracheese", deliverPizza) возвращает строку "Delivering Ultracheese pizza."  */
 
 /*  function deliverPizza(pizzaName) {
-return 'Delivering ${pizzaName} pizza.';
+  return `Delivering ${pizzaName} pizza.`;
 }
 
 function makePizza(pizzaName) {
-return 'Pizza ${pizzaName} is being prepared, please wait...';
+  return `Pizza ${pizzaName} is being prepared, please wait...`;
 }
+
 
 function makeMessage(pizzaName, callback) {
 return callback(pizzaName);
-}  */
+}
+
+
+console.log(makeMessage("Royal Grand", makePizza));
+console.log(makeMessage("Ultracheese", deliverPizza));   */
