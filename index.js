@@ -627,12 +627,26 @@ console.log(genres);
 
 /* 
 
+Дополни функцию getUserNames(users) так, чтобы она возвращала массив имён пользователей (свойство name) из массива объектов в параметре users.
 
+Объявлена переменная getUserNames
+
+Переменной getUserNames присвоена стрелочная функция с параметром (users).
+
+Для перебора параметра users используется метод map()
+
+Вызов функции с указанным массивом пользователей возвращает массив ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
+
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
 
 */
 
 
 /* 
+
+const getUserNames = users => {
+return users.map(user => user.name);
+};
 
 
 
@@ -646,6 +660,13 @@ console.log(genres);
 
 /* 
 
+Дополни функцию getUserEmails(users) так, чтобы она возвращала массив почтовых адресов пользователей (свойство email) из массива объектов в параметре users.
+
+Объявлена переменная getUserNames
+Переменной getUserNames присвоена стрелочная функция с параметром (users)
+Для перебора параметра users используется метод map()
+Вызов функции с указанным массивом пользователей возвращает массив ["moorehensley@indexia.com", "sharlenebush@tubesys.com", "rossvazquez@xinware.com", "elmahead@omatom.com", "careybarr@nurali.com", "blackburndotson@furnigeer.com", "shereeanthony@kog.com"]
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
 
 
 */
@@ -653,26 +674,9 @@ console.log(genres);
 
 /* 
 
-
-
-*/
-
-
-
-
-
-/* --------------------------------- TASK 6 --------------------------------- */
-
-/* 
-
-
-
-*/
-
-
-/* 
-
-
+const getUserEmails = users => {
+return users.map(user => user.email);
+};
 
 */
 
@@ -684,14 +688,28 @@ console.log(genres);
 
 /* 
 
+Дополни код так, чтобы в переменной evenNumbers получился массив чётных чисел из массива numbers, а в переменной oddNumbers массив нечётных. Обязательно используй метод filter().
 
+Объявлена переменная numbers
+Значение переменной numbers это массив [17, 24, 82, 61, 36, 18, 47, 52, 73]
+Объявлена переменная evenNumbers
+Значение переменной evenNumbers это массив [24, 82, 36, 18, 52]
+Объявлена переменная oddNumbers
+Значение переменной oddNumbers это массив [17, 61, 47, 73]
+Для перебора массива numbers использован метод filter()
 
 */
 
 
 /* 
 
+const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
 
+const evenNumbers = numbers.filter(number => number % 2 === 0);
+const oddNumbers = numbers.filter(number => number % 2 !== 0);
+
+console.log(evenNumbers); 
+console.log(oddNumbers);
 
 */
 
@@ -703,16 +721,49 @@ console.log(genres);
 
 /* 
 
+Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений.
 
+Объявлена переменная books
+Значение переменной books это массив объектов
+Объявлена переменная allGenres
+Значение переменной allGenres это массив ["adventure", "history", "fiction", "mysticism", "horror", "mysticism", "adventure"]
+Объявлена переменная uniqueGenres
+Значение переменной uniqueGenres это массив ["adventure", "history", "fiction", "mysticism", "horror"]
+Для вычисления значения переменной allGenders использован метод flatMap()
+Для вычисления значения переменной uniqueGenres использован метод filter()
 
 */
 
 
 /* 
 
+const books = [
+{
+title: "The Last Kingdom",
+author: "Bernard Cornwell",
+genres: ["adventure", "history"],
+},
+{
+title: "Beside Still Waters",
+author: "Robert Sheckley",
+genres: ["fiction", "mysticism"],
+},
+{
+title: "Redder Than Blood",
+author: "Tanith Lee",
+genres: ["horror", "mysticism", "adventure"],
+},
+];
 
+const allGenres = books.flatMap(book => book.genres);
+const uniqueGenres = allGenres.filter((genre, index, array) => array.indexOf(genre) === index);
+
+console.log(allGenres);
+console.log(uniqueGenres);
+console.log();
 
 */
+
 
 
 
@@ -721,14 +772,52 @@ console.log(genres);
 
 /* 
 
+Используя метод filter() дополни код так, чтобы:
 
+В переменной topRatedBooks получился массив книг рейтинг которых (свойство rating) больше либо равно значению переменной MIN_RATING.
+В переменной booksByAuthor получился массив книг написанных автором с именем (свойство author) которое совпадает со значением в переменной AUTHOR.
+Объявлена переменная books
+Значение переменной books это массив объектов
+Объявлена переменная MIN_RATING
+Значение переменной MIN_RATING это число 8
+Объявлена переменная AUTHOR
+Значение переменной AUTHOR это строка "Bernard Cornwell"
+Объявлена переменная topRatedBooks
+Значение переменной topRatedBooks это массив книг с рейтингов выше 8
+Объявлена переменная booksByAuthor
+Значение переменной booksByAuthor это массив книг автор которых "Bernard Cornwell"
+Для перебора массива books использован метод filter()
 
 */
 
 
 /* 
 
+const books = [
+{
+title: "The Last Kingdom",
+author: "Bernard Cornwell",
+rating: 8.38,
+},
+{
+title: "Beside Still Waters",
+author: "Robert Sheckley",
+rating: 8.51,
+},
+{
+title: "The Dream of a Ridiculous Man",
+author: "Fyodor Dostoevsky",
+rating: 7.75,
+},
+{ title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+{ title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
 
+const MIN_RATING = 8;
+const AUTHOR = "Bernard Cornwell";
+
+const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+const booksByAuthor = books.filter(book => book.author === AUTHOR);
 
 */
 
@@ -739,14 +828,25 @@ console.log(genres);
 
 /* 
 
+Дополни функцию getUsersWithEyeColor(users, color) так, чтобы она возвращала массив пользователей у которых цвет глаз (свойство eyeColor) совпадает со значением параметра color.
 
+Объявлена переменная getUsersWithEyeColor
+Переменной getUsersWithEyeColor присвоена стрелочная функция с параметрами (users, color)
+Для перебора параметра users используется метод filter()
+Если значение параметра color это "blue", функция возвращает массив объектов пользователей с именами Moore Hensley, Sharlene Bush и Carey Barr
+Если значение параметра color это "green", функция возвращает массив объектов пользователей с именами Ross Vazquez и Elma Head
+Если значение параметра color это "brown", функция возвращает массив объектов пользователей с именами Blackburn Dotson и Sheree Anthony
+Если значение параметра color это любая другая строка, функция возвращает пустой массив
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
 
 */
 
 
 /* 
 
-
+const getUsersWithEyeColor = (users, color) => {
+return users.filter(user => user.eyeColor === color);
+};
 
 */
 
@@ -757,16 +857,28 @@ console.log(genres);
 
 /* 
 
+Дополни функцию getUsersWithAge(users, minAge, maxAge) так, чтобы она возвращала массив пользователей, возраст которых (свойство age) попадает в промежуток от minAge до maxAge.
 
+Объявлена переменная getUsersWithAge
+Переменной getUsersWithAge присвоена стрелочная функция с параметрами (users, minAge, maxAge)
+Для перебора параметра users используется метод filter()
+Если значение параметров minAge и maxAge равны 20 и 30 соотвественно, функция возвращает массив объектов пользователей с именами Ross Vazquez, Elma Head и Carey Barr
+Если значение параметров minAge и maxAge равны 30 и 40 соотвественно, функция возвращает массив объектов пользователей с именами Moore Hensley, Sharlene Bush, Blackburn Dotson, Sheree Anthony
+Если значение параметров minAge и maxAge равны 80 и 100 соотвественно, функция возвращает пустой массив
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
 
 */
 
 
 /* 
 
+const getUsersWithAge = (users, minAge, maxAge) => {
+  return users.filter(user => user.age >= minAge && user.age <= maxAge);
+};
 
 
 */
+
 
 
 
@@ -774,18 +886,47 @@ console.log(genres);
 
 /* 
 
+Дополни функцию getUsersWithFriend(users, friendName) так, чтобы она возвращала массив пользователей у которых есть друг с именем в параметре friendName. Массив друзей пользователя хранится в свойстве friends.
 
+Объявлена переменная getUsersWithFriend
+Переменной getUsersWithFriend присвоена стрелочная функция с параметрами (users, friendName)
+Для перебора параметра users используется метод filter()
+Если значение параметра friendName это строка "Briana Decker", функция возвращает массив объектов пользователей с именами Sharlene Bush и Sheree Anthony
+Если значение параметра friendName это строка "Goldie Gentry", функция возвращает массив объектов пользователей с именами Elma Head и Sheree Anthony
+Если значение параметра friendName это строка "Adrian Cross", функция возвращает пустой массив
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
 
 */
 
 
 /* 
 
+const getUsersWithFriend = (users, friendName) => {
+return users.filter(user => user.friends.includes(friendName));
+};
 
+const users = [
+{
+id: "01",
+name: "Ross Vazquez",
+friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+},
+{
+id: "02",
+name: "Elma Head",
+friends: ["Goldie Gentry", "Aisha Tran"],
+},
+{
+id: "03",
+name: "Carey Barr",
+friends: ["Jordan Sampson", "Eddie Strong"],
+},
+];
+
+console.log(getUsersWithFriend(users, "Goldie Gentry"));
+console.log(getUsersWithFriend(users, "Adrian Cross")); 
 
 */
-
-
 
 
 
@@ -793,14 +934,23 @@ console.log(genres);
 
 /* 
 
+Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends). У нескольких пользователей могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
 
+Объявлена переменная getFriends
+Переменной getFriends присвоена стрелочная функция с параметром (users)
+Вызов функции с указанным массивом пользователей возвращает массив ["Sharron Pace", "Briana Decker", "Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner", "Goldie Gentry", "Aisha Tran", "Jordan Sampson", "Eddie Strong", "Jacklyn Lucas", "Linda Chapman"]
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
 
 */
 
 
 /* 
 
-
+const getFriends = (users) => {
+  const allFriends = users.flatMap(user => user.friends);
+  const uniqueFriends = [...new Set(allFriends)];
+  return uniqueFriends;
+};
 
 */
 
@@ -812,6 +962,12 @@ console.log(genres);
 
 /* 
 
+Дополни функцию getActiveUsers(users) так, чтобы она возвращала массив активных пользователей, значение свойства isActive которых true.
+
+Объявлена переменная getActiveUsers Переменной getActiveUsers присвоена стрелочная функция с параметром users
+Для перебора параметра users используется метод filter()
+Вызов функции с указанным массивом пользователей возвращает массив объектов пользователей с именами Sharlene Bush, Elma Head, Carey Barr и Sheree Anthony
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
 
 
 */
@@ -819,10 +975,11 @@ console.log(genres);
 
 /* 
 
-
+const getActiveUsers = (users) => {
+return users.filter(user => user.isActive);
+};
 
 */
-
 
 
 
@@ -832,6 +989,14 @@ console.log(genres);
 
 /* 
 
+Дополни функцию getInactiveUsers(users) так, чтобы она возвращала массив неактивных пользователей, значение свойства isActive которых false.
+
+-Объявлена переменная getInactiveUsers.
+
+Переменной getInactiveUsers присвоена стрелочная функция с параметром users
+Для перебора параметра users используется метод filter()
+Вызов функции с указанным массивом пользователей возвращает массив объектов пользователей с именами Moore Hensley, Ross Vazquez и Blackburn Dotson
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
 
 
 */
@@ -839,7 +1004,9 @@ console.log(genres);
 
 /* 
 
-
+const getInactiveUsers = (users) => {
+  return users.filter(user => !user.isActive);
+};
 
 */
 
@@ -847,7 +1014,63 @@ console.log(genres);
 
 
 
+
 /* --------------------------------- TASK 28 --------------------------------- */
+
+/* 
+
+Используя метод find() дополни код так, чтобы:
+
+В переменной bookWithTitle получился объект книги название которой (свойство title) совпадает со значением переменной BOOK_TITLE.
+В переменной bookByAuthor получился объект книги автор который (свойство author) совпадает со значением переменной AUTHOR.
+Объявлена переменная books
+Значение переменной books это массив
+Объявлена переменная BOOK_TITLE
+Значение переменной BOOK_TITLE это строка "The Dream of a Ridiculous Man"
+Объявлена переменная AUTHOR
+Значение переменной AUTHOR это строка "Robert Sheckley"
+Объявлена переменная bookWithTitle
+Значение переменной bookWithTitle это объект книги с названием выше "The Dream of a Ridiculous Man"
+Объявлена переменная bookByAuthor
+Значение переменной bookByAuthor это объект книги автора "Robert Sheckley"
+Для перебора массива books использован метод find()
+
+*/
+
+
+/* 
+
+const books = [
+{
+title: 'The Last Kingdom',
+author: 'Bernard Cornwell',
+rating: 8.38,
+},
+{
+title: 'Beside Still Waters',
+author: 'Robert Sheckley',
+rating: 8.51,
+},
+{
+title: 'The Dream of a Ridiculous Man',
+author: 'Fyodor Dostoevsky',
+rating: 7.75,
+},
+{ title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+];
+const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+const AUTHOR = 'Robert Sheckley';
+
+const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+const bookByAuthor = books.find(book => book.author === AUTHOR);
+
+*/
+
+
+
+
+
+/* --------------------------------- TASK 29 --------------------------------- */
 
 /* 
 
