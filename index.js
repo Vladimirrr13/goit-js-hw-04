@@ -1074,6 +1074,297 @@ const bookByAuthor = books.find(book => book.author === AUTHOR);
 
 /* 
 
+Дополни функцию getUserWithEmail(users, email) так, чтобы она возвращала объект пользователя, почта которого (свойство email) совпадает со значением параметра email.
+Объявлена функция getUserWithEmail(users, email)
+Для перебора параметра users используется метод find()
+Если значение параметра email это "shereeanthony@kog.com", функция возвращает объект пользователя с именем Sheree Anthony
+Если значение параметра email это "elmahead@omatom.com", функция возвращает объект пользователя с именем Elma Head
+Если значение параметра email это "blackburndotson@furnigeer.com", функция возвращает объект пользователя с именем Blackburn Dotson
+Если в массиве users нет пользователя с почтой из параметра email, функция возвращает undefined
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+*/
+
+
+/* 
+
+const getUserWithEmail = (users, email) => {
+return users.find(user => user.email === email);
+};
+
+const users = [
+{ name: 'Sheree Anthony', email: 'shereeanthony@kog.com' },
+{ name: 'Elma Head', email: 'elmahead@omatom.com' },
+{ name: 'Blackburn Dotson', email: 'blackburndotson@furnigeer.com' }
+];
+
+console.log(getUserWithEmail(users, 'shereeanthony@kog.com'));
+console.log(getUserWithEmail(users, 'elmahead@omatom.com')); 
+console.log(getUserWithEmail(users, 'blackburndotson@furnigeer.com')); 
+console.log(getUserWithEmail(users, 'nonexistentemail@example.com'));
+
+ */
+
+
+
+
+
+/* --------------------------------- TASK 30 --------------------------------- */
+
+/* 
+
+Используя метод every() дополни код так, чтобы:
+
+В переменной eachElementInFirstIsEven был результат проверки всех элементов массива firstArray на чётность.
+В переменной eachElementInFirstIsOdd был результат проверки всех элементов массива firstArray на нечётность.
+В переменной eachElementInSecondIsEven был результат проверки всех элементов массива secondArray на чётность.
+В переменной eachElementInSecondIsOdd был результат проверки всех элементов массива secondArray на нечётность.
+В переменной eachElementInThirdIsEven был результат проверки всех элементов массива thirdArray на чётность.
+В переменной eachElementInThirdIsOdd был результат проверки всех элементов массива thirdArray на нечётность.
+Объявлена переменная firstArray
+Значение переменной firstArray это массив [26, 94, 36, 18]
+Объявлена переменная secondArray
+Значение переменной secondArray это массив [17, 61, 23]
+Объявлена переменная thirdArray
+Значение переменной thirdArray это массив [17, 26, 94, 61, 36, 23, 18]
+Объявлена переменная eachElementInFirstIsEven
+Значение переменной eachElementInFirstIsEven это буль true
+Объявлена переменная eachElementInFirstIsOdd
+Значение переменной eachElementInFirstIsOdd это буль false
+Объявлена переменная eachElementInSecondIsEven
+Значение переменной eachElementInSecondIsEven это буль false
+Объявлена переменная eachElementInSecondIsOdd
+Значение переменной eachElementInSecondIsOdd это буль true
+Объявлена переменная eachElementInThirdIsEven
+Значение переменной eachElementInThirdIsEven это буль false
+Объявлена переменная eachElementInThirdIsOdd
+Значение переменной eachElementInThirdIsOdd это буль false
+Для перебора массивов использован метод every()
+
+*/
+
+
+/* 
+
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+
+const eachElementInFirstIsEven = firstArray.every(element => element % 2 === 0);
+const eachElementInFirstIsOdd = firstArray.every(element => element % 2 !== 0);
+
+const eachElementInSecondIsEven = secondArray.every(element => element % 2 === 0);
+const eachElementInSecondIsOdd = secondArray.every(element => element % 2 !== 0);
+
+const eachElementInThirdIsEven = thirdArray.every(element => element % 2 === 0);
+const eachElementInThirdIsOdd = thirdArray.every(element => element % 2 !== 0);
+
+console.log(eachElementInFirstIsEven); 
+console.log(eachElementInFirstIsOdd); 
+console.log(eachElementInSecondIsEven); 
+console.log(eachElementInSecondIsOdd); 
+console.log(eachElementInThirdIsEven); 
+console.log(eachElementInThirdIsOdd); 
+
+*/
+
+
+
+
+
+/* --------------------------------- TASK 31 --------------------------------- */
+
+/* 
+
+Дополни функцию isEveryUserActive(users) так, чтобы она проверяла все ли пользователи сейчас активны (свойство isActive) и возвращала true или false.
+
+Объявлена переменная isEveryUserActive
+Переменной isEveryUserActive присвоена стрелочная функция с параметром (users)
+Для перебора параметра users используется метод every()
+Вызов функции с указанным массивом пользователей возвращает false
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+*/
+
+
+/* 
+
+const isEveryUserActive = (users) => {
+return users.every(user => user.isActive);
+};
+
+console.log(isEveryUserActive([
+{name: 'Mango', isActive: true},
+{name: 'Poly', isActive: false},
+{name: 'Ajax', isActive: true},
+])); 
+
+console.log(isEveryUserActive([
+{name: 'Mango', isActive: true},
+{name: 'Poly', isActive: true},
+{name: 'Ajax', isActive: true},
+])); 
+
+
+*/
+
+
+
+
+
+/* --------------------------------- TASK 32 --------------------------------- */
+
+/* 
+
+Используя метод some() дополни код так, чтобы:
+
+В переменной anyElementInFirstIsEven был результат проверки наличия чётных элементов в массиве firstArray.
+В переменной anyElementInFirstIsOdd был результат проверки наличия нечётных элементов в массиве firstArray.
+В переменной anyElementInSecondIsEven был результат проверки наличия чётных элементов в массиве secondArray.
+В переменной anyElementInSecondIsOdd был результат проверки наличия нечётных элементов в массиве secondArray.
+В переменной anyElementInThirdIsEven был результат проверки наличия чётных элементов в массиве thirdArray.
+В переменной anyElementInThirdIsOdd был результат проверки наличия нечётных элементов в массиве thirdArray.
+Объявлена переменная firstArray
+Значение переменной firstArray это массив [26, 94, 36, 18]
+Объявлена переменная secondArray
+Значение переменной secondArray это массив [17, 61, 23]
+Объявлена переменная thirdArray
+Значение переменной thirdArray это массив [17, 26, 94, 61, 36, 23, 18]
+Объявлена переменная anyElementInFirstIsEven
+Значение переменной anyElementInFirstIsEven это буль true
+Объявлена переменная anyElementInFirstIsOdd
+Значение переменной anyElementInFirstIsOdd это буль false
+Объявлена переменная anyElementInSecondIsEven
+Значение переменной anyElementInSecondIsEven это буль false
+Объявлена переменная anyElementInSecondIsOdd
+Значение переменной anyElementInSecondIsOdd это буль true
+Объявлена переменная anyElementInThirdIsEven
+Значение переменной anyElementInThirdIsEven это буль true
+Объявлена переменная anyElementInThirdIsOdd
+Значение переменной anyElementInThirdIsOdd это буль true
+Для перебора массивов использован метод some()
+
+*/
+
+
+/* 
+
+const firstArray = [26, 94, 36, 18];
+const secondArray = [17, 61, 23];
+const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+
+const anyElementInFirstIsEven = firstArray.some(element => element % 2 === 0);
+const anyElementInFirstIsOdd = firstArray.some(element => element % 2 !== 0);
+
+const anyElementInSecondIsEven = secondArray.some(element => element % 2 === 0);
+const anyElementInSecondIsOdd = secondArray.some(element => element % 2 !== 0);
+
+const anyElementInThirdIsEven = thirdArray.some(element => element % 2 === 0);
+const anyElementInThirdIsOdd = thirdArray.some(element => element % 2 !== 0);
+
+console.log(anyElementInFirstIsEven);
+console.log(anyElementInFirstIsOdd);
+console.log(anyElementInSecondIsEven);
+console.log(anyElementInSecondIsOdd);
+console.log(anyElementInThirdIsEven);
+console.log(anyElementInThirdIsOdd);
+
+*/
+
+
+
+
+
+/* --------------------------------- TASK 33 --------------------------------- */
+
+/* 
+
+Дополни функцию isAnyUserActive(users) так, чтобы она проверяла наличие активных пользователей (свойство isActive) и возвращала true или false.
+
+Объявлена функция isAnyUserActive(users)
+Для перебора параметра users используется метод some()
+Вызов функции с указанным массивом пользователей возвращает true
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+*/
+
+
+/* 
+
+const isAnyUserActive = users => {
+  return users.some(user => user.isActive);
+};
+
+const users = [
+  { name: "Mango", isActive: true },
+  { name: "Poly", isActive: false },
+  { name: "Ajax", isActive: true },
+  { name: "Chelsey", isActive: false },
+];
+
+console.log(isAnyUserActive(users));
+console.log(isAnyUserActive([{name: 'Bob', isActive: false}])); 
+
+*/
+
+
+
+
+
+/* --------------------------------- TASK 34 --------------------------------- */
+
+/* 
+
+Игровому сервису необходим функционал подсчёта среднего времени проведённого в играх. Дополни код так, чтобы в переменной totalPlayTime получилось общее игровое время из массива playtimes.
+
+Объявлена переменная players
+Значение переменной players это объект игроков с игровым временем каждого
+Объявлена переменная playtimes
+Значение переменной playtimes это массив [1270, 468, 710, 244]
+Объявлена переменная totalPlayTime
+Значение переменной totalPlayTime это число 2692
+Для перебора массива playtimes используется метод reduce()
+Объявлена переменная averagePlayTime
+Значение переменной averagePlayTime это число 673
+
+*/
+
+
+/* 
+
+const players = {
+mango: 1270,
+poly: 468,
+ajax: 710,
+kiwi: 244
+};
+
+const playtimes = Object.values(players); 
+
+const totalPlayTime = playtimes.reduce((acc, playtime) => acc + playtime, 0);
+
+const averagePlayTime = totalPlayTime / playtimes.length;
+
+console.log(totalPlayTime); 
+console.log(averagePlayTime); 
+
+*/
+
+
+
+
+
+/* --------------------------------- TASK 35 --------------------------------- */
+
+/* 
+
+Нашему сервису необходимо рассчитать среднее время проведённое в одной игре для каждого игрока, и получить общую сумму этих времён. Рассчитать время для каждого из игроков, можно разделив его время (свойство playtime) на количество игр (свойство gamesPlayed).
+
+Объявлена переменная players
+Значение переменной players это массив объектов игроков
+Объявлена переменная totalAveragePlaytimePerGame
+Значение переменной totalAveragePlaytimePerGame это число 1023
+Для перебора массива players используется метод reduce()
 
 
 */
@@ -1081,6 +1372,149 @@ const bookByAuthor = books.find(book => book.author === AUTHOR);
 
 /* 
 
+const players = [
+{ name: "Mango", playtime: 1270, gamesPlayed: 4 },
+{ name: "Poly", playtime: 469, gamesPlayed: 2 },
+{ name: "Ajax", playtime: 690, gamesPlayed: 3 },
+{ name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+
+const totalAveragePlaytimePerGame = players.reduce(
+(total, player) => total + player.playtime / player.gamesPlayed,
+0
+);
+
+console.log(totalAveragePlaytimePerGame); 
+
+*/
+
+
+
+
+
+/* --------------------------------- TASK 36 --------------------------------- */
+
+/* 
+
+Дополни функцию calculateTotalBalance(users) так, чтобы она считала и возвращала сумму всех средств (свойство balance) которые хранят пользователи из массива users.
+
+Объявлена переменная calculateTotalBalance
+Переменной calculateTotalBalance присвоена стрелочная функция с параметром (users)
+Для перебора параметра users используется метод reduce()
+Вызов функции с указанным массивом пользователей возвращает число 20916
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+*/
+
+
+/* 
+
+const calculateTotalBalance = users => {
+  return users.reduce((totalBalance, user) => totalBalance + user.balance, 0);
+};
+
+*/
+
+
+
+
+
+/* --------------------------------- TASK 37 --------------------------------- */
+
+/* 
+
+Дополни функцию getTotalFriendCount(users) так, чтобы она считала и возвращала общее количество друзей (свойство friends) всех пользователей из массива users.
+
+Объявлена переменная getTotalFriendCount
+Переменной getTotalFriendCount присвоена стрелочная функция с параметром (users)
+Для перебора параметра users используется метод reduce()
+Вызов функции с указанным массивом пользователей возвращает число 14
+Вызов функции со случайными, но валидными аргументами, возвращает правильное значение
+
+*/
+
+
+/* 
+
+const getTotalFriendCount = users => {
+  return users.reduce((totalFriends, user) => {
+    return totalFriends + user.friends.length;
+  }, 0);
+};
+
+*/
+
+
+
+
+
+/* --------------------------------- TASK 38 --------------------------------- */
+
+/* 
+
+Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной alphabeticalAuthors копия массива имён авторов authors отсортированная в по алфавиту.
+
+Объявлена переменная releaseDates
+Значение переменной releaseDates это массив [2016, 1967, 2008, 1984, 1973, 2012, 1997]
+Объявлена переменная authors
+Значение переменной authors это массив ["Tanith Lee", "Bernard Cornwell", "Robert Sheckley", "Fyodor Dostoevsky"]
+Объявлена переменная ascendingReleaseDates
+Значение переменной ascendingReleaseDates это массив [1967, 1973, 1984, 1997, 2008, 2012, 2016]
+Объявлена переменная alphabeticalAuthors
+Значение переменной alphabeticalAuthors это массив ["Bernard Cornwell", "Tanith Lee", "Robert Sheckley", "Fyodor Dostoevsky"]
+Использован метод sort()
+
+*/
+
+
+/* 
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const authors = [  "Tanith Lee",  "Bernard Cornwell",  "Robert Sheckley",  "Fyodor Dostoevsky",];
+
+const ascendingReleaseDates = [...releaseDates].sort();
+
+const alphabeticalAuthors = [...authors].sort();
+
+console.log(ascendingReleaseDates);
+console.log(alphabeticalAuthors);
 
 
 */
+
+
+
+
+/* --------------------------------- TASK 39 --------------------------------- */
+
+/* 
+
+Онлайн бибилиотеке необходимо отображать книги сортированные по дате издания, по её возрастанию или убыванию. Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной descendingReleaseDates копия отсортированная по убыванию.
+
+Объявлена переменная releaseDates
+Значение переменной releaseDates это массив [2016, 1967, 2008, 1984, 1973, 2012, 1997]
+Объявлена переменная ascendingReleaseDates
+Значение переменной ascendingReleaseDates это массив [1967, 1973, 1984, 1997, 2008, 2012, 2016]
+Объявлена переменная descendingReleaseDates
+Значение переменной descendingReleaseDates это массив [2016, 2012, 2008, 1997, 1984, 1973, 1967]
+Использован метод sort()
+
+
+*/
+
+
+/* 
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+
+const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b);
+
+const descendingReleaseDates = [...releaseDates].sort((a, b) => b - a);
+
+console.log(ascendingReleaseDates);
+console.log(descendingReleaseDates);
+
+*/
+
+
+
